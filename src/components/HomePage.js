@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 export default class HomePage extends Component{
     state = {
+      //when the user is logged in stay true else false
       logedIn  : false,
       upload: []
     }
