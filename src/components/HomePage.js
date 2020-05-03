@@ -7,7 +7,16 @@ export default class HomePage extends Component{
       upload: []
     }
     handleImgUpload = (e) => {
- 
+     let file = this.refs.file.files[0];
+      // browser API: https://developer.mozilla.org/en-US/docs/Web/API/FileReader
+      let reader = new FileReader();
+      reader.readAsDataURL(file);
+      // set the upload to the file.read so it can be displayed 
+      reader.onloadend = function () {
+        this.setState({
+            upload: [reader.result]
+        })
+      }.bind(this);
         
     }
   
