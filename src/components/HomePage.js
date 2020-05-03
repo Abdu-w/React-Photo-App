@@ -26,6 +26,15 @@ export default class HomePage extends Component{
     render(){
       return(
        <div className='homePage'> 
+          
+          <input 
+            ref="file" 
+            name="imageFile"
+            type="file" 
+            alt="Uploaded Image" 
+            value={this.state.img} 
+            onChange={this.handleImgUpload}
+            />  
              
        </div>
       )
