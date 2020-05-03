@@ -3,7 +3,6 @@ import { Redirect } from 'react-router-dom'
 
 export default class HomePage extends Component{
     state = {
-      //when the user is logged in stay true else false
       logedIn  : false,
       upload: []
     }
