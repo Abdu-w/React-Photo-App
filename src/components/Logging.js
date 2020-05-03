@@ -15,6 +15,12 @@ export default class Logging extends Component {
       //prevent page from reloading to keep state
         e.preventDefault()
     }
+    
+    
+       // sorce redirect: https://reacttraining.com/react-router/web/example/auth-workflow
+      // when logged in send userAuth and true to windows local sorage as key values pairs
+    
+    
     //use bracket notaion to matchh input's  name props  and state[keys]
     handleChange = (e) => this.setState({[e.target.name]: e.target.value})
     
