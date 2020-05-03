@@ -27,7 +27,7 @@ export default class HomePage extends Component{
         console.log(this.state)
       return(
        <div className='homePage'> 
-         <input type="file" alt="add Image" value={this.state.upload} onChange={this.handleImgUpload}/>     
+             
        </div>
       )
     } 
