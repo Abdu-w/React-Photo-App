@@ -37,6 +37,9 @@ export default class HomePage extends Component{
       }
       return(
        <div className='homePage'> 
+          <h2>User logged in : {this.state.logedIn ? 'True' : 'False'}</h2>
+          <button onClick={this.signOut}>sign out</button>
+          <br />
           
           <input 
             ref="file" 
