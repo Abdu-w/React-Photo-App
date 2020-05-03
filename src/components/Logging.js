@@ -30,6 +30,10 @@ export default class Logging extends Component {
       })        
     }
     
+      //use bracket notaion to matchh input's  name props  and state[keys]
+    handleChange = (e) => {
+      this.setState({[e.target.name]: e.target.value})
+    }
     
 
     
