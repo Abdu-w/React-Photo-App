@@ -73,7 +73,7 @@ export default class Logging extends Component {
             required />
         </br>
   
-        <button onClick={this.handleClick}  type="submit">
+      <button type="submit" disabled={isDisabled}>
           Login   
         </button>
   
