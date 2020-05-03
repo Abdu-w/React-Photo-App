@@ -63,15 +63,14 @@ export default class Logging extends Component {
         <br>
         </br>
    
-        <label>Password  </label>
+       <label>Password  </label>
         <input 
             type="password" 
-            placeholder="Password" 
+            placeholder="password" 
             name="password"
-            value={this.state.pass} 
+            value={this.state.password} 
             onChange={this.handleChange} 
             required />
-        <br>
         </br>
   
         <button onClick={this.handleClick}  type="submit">
