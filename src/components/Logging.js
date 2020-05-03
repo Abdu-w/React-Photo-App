@@ -19,6 +19,16 @@ export default class Logging extends Component {
     
        // sorce redirect: https://reacttraining.com/react-router/web/example/auth-workflow
       // when logged in send userAuth and true to windows local sorage as key values pairs
+      window.localStorage.setItem('userAuth', 'true')
+      console.log(this.props)
+      //if this is true then push home page to the top of the borwser hisory  
+      this.props.history.push('/home')
+      //then it can reset the usernme and password 
+      this.setState({
+        username: '',
+        password: ''
+      })        
+    }
     
     
     //use bracket notaion to matchh input's  name props  and state[keys]
