@@ -21,6 +21,7 @@ export default class HomePage extends Component{
       }.bind(this);
         
     }
+    
   
     render(){
         console.log(this.state)
