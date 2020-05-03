@@ -41,4 +41,15 @@ export default class HomePage extends Component{
     } 
   }
   
+    
+function LoadImage(props){  
+  return (
+   <div>
+     <img src={props.upload} />
+     <br />
+     <button onClick={props.deletePhoto}>delete photo</button>
+   </div>
+ )
+}
+  
   
