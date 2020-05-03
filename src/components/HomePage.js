@@ -21,6 +21,13 @@ export default class HomePage extends Component{
       }.bind(this);
         
     }
+    //removes userauth from localstorage and reset sate to rerender page
+    signOut = (e) => {
+      localStorage.removeItem('userAuth')
+      this.setState({
+        logedIn: false
+      })
+    }
     
   
     render(){
