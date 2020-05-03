@@ -24,7 +24,6 @@ export default class HomePage extends Component{
     
   
     render(){
-        console.log(this.state)
       return(
        <div className='homePage'> 
              
