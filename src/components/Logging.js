@@ -14,10 +14,6 @@ export default class Logging extends Component {
     handleSubmit = (e) => {
       //prevent page from reloading to keep state
         e.preventDefault()
-        console.log(e, this.props)
-        // <Redirect to="/dashboard" /> 
-        // https://reacttraining.com/react-router/web/example/auth-workflow
-        this.props.locaction.push('/home')
     }
     //use bracket notaion to matchh input's  name props  and state[keys]
     handleChange = (e) => this.setState({[e.target.name]: e.target.value})
