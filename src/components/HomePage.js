@@ -2,14 +2,19 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 
 export default class HomePage extends Component{
-    state = {
-      logedIn  : false,
-      upload: []
+    constructor(props) {
+      super(props)
+      this.state = {
+        //when the user is logged in stay true else false
+        logedIn  : true,
+        upload: []
+      }
+      this.myRef = React.createRef();
     }
 
 // source to read img : https://stackoverflow.com/questions/38049966/get-image-preview-before-uploading-in-react
     handleImgUpload = (e) => {
-     let file = this.refs.file.files[0];
+      let file = this.refs.file.files[0];
       // browser API: https://developer.mozilla.org/en-US/docs/Web/API/FileReader
       let reader = new FileReader();
       reader.readAsDataURL(file);
@@ -19,7 +24,12 @@ export default class HomePage extends Component{
             upload: [reader.result]
         })
       }.bind(this);
-        
+    }
+    // when photo is deleted reset state to empty array
+    deletePhoto = (e) => {
+      this.setState({
+        upload: []
+      })
     }
     //removes userauth from localstorage and reset sate to rerender page
     signOut = (e) => {
@@ -28,13 +38,14 @@ export default class HomePage extends Component{
         logedIn: false
       })
     }
-    
-  
+
     render(){
-          //when page rerenders after signout and userAuth is not in the localstorage obj it will redirect to login
+      //when page rerenders after signout and userAuth is not in the localstorage obj it will redirect to login
       if(!localStorage.getItem('userAuth')) {
         return <Redirect to="/" />
       }
+
+
       return(
        <div className='homePage'> 
           <h2>User logged in : {this.state.logedIn ? 'True' : 'False'}</h2>
@@ -42,8 +53,6 @@ export default class HomePage extends Component{
           <br />
           <br />
           <br />
-          <br />
-          
           <input 
             ref="file" 
             name="imageFile"
@@ -51,14 +60,23 @@ export default class HomePage extends Component{
             alt="Uploaded Image" 
             value={this.state.img} 
             onChange={this.handleImgUpload}
-            />  
-             
+            />    
+
+          <br />
+
+          {
+          this.state.upload.length
+          ? <LoadImage 
+              upload={this.state.upload}
+              deletePhoto={this.deletePhoto}
+              />
+          : null 
+          }
        </div>
       )
     } 
   }
   
-    
 function LoadImage(props){  
   return (
    <div>
@@ -68,5 +86,8 @@ function LoadImage(props){
    </div>
  )
 }
-  
-  
+
+
+
+
+
