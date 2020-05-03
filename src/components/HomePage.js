@@ -6,6 +6,8 @@ export default class HomePage extends Component{
       logedIn  : false,
       upload: []
     }
+
+
     handleImgUpload = (e) => {
      let file = this.refs.file.files[0];
       // browser API: https://developer.mozilla.org/en-US/docs/Web/API/FileReader
