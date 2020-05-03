@@ -39,10 +39,17 @@ export default class Logging extends Component {
     
     render() {
         // the localstoarge is populated  then redirect to the page 
+      if(localStorage.getItem('userAuth')) {
+        return <Redirect to="home"/>
+      }
       // disable loging button until uername&pass is populated 
-      
+      let isDisabled = true
       // deconstruct the state 
+      let {username, password} = this.state
       // if username and password are populated == true
+      if(username && password) {
+        isDisabled = false
+      }
       return (
         <form onSubmit={this.handleSubmit}>
         <label>Username  </label>
