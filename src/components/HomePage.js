@@ -7,7 +7,7 @@ export default class HomePage extends Component{
       upload: []
     }
 
-
+// source to read img : https://stackoverflow.com/questions/38049966/get-image-preview-before-uploading-in-react
     handleImgUpload = (e) => {
      let file = this.refs.file.files[0];
       // browser API: https://developer.mozilla.org/en-US/docs/Web/API/FileReader
