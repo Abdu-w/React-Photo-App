@@ -7,12 +7,8 @@ export default class HomePage extends Component{
       upload: []
     }
     handleImgUpload = (e) => {
-      this.setState({
-        // upload previous file add store them in array 
-        upload: [...this.state.upload, e.target.value]
-
-      })
-    //   console.log(e.target.value)
+ 
+        
     }
   
     render(){
