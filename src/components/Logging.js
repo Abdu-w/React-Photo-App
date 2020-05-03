@@ -7,17 +7,15 @@ import { Redirect } from 'react-router-dom'
 export default class Logging extends Component {
     state ={
         login:false,
-        userName:'',
+        username:'',
         password:'',
       }
-  
+    // prevents page from refreshing 
     handleSubmit = (e) => {
-      //prevent page from reloading to keep state
-        e.preventDefault()
-    }
-    
-    
-       // sorce redirect: https://reacttraining.com/react-router/web/example/auth-workflow
+      e.preventDefault()
+      
+      
+      // sorce redirect: https://reacttraining.com/react-router/web/example/auth-workflow
       // when logged in send userAuth and true to windows local sorage as key values pairs
       window.localStorage.setItem('userAuth', 'true')
       console.log(this.props)
@@ -29,16 +27,13 @@ export default class Logging extends Component {
         password: ''
       })        
     }
-    
-      //use bracket notaion to matchh input's  name props  and state[keys]
+    //use bracket notaion to matchh input's  name props  and state[keys]
     handleChange = (e) => {
       this.setState({[e.target.name]: e.target.value})
     }
     
-
-    
     render() {
-        // the localstoarge is populated  then redirect to the page 
+      // the localstoarge is populated  then redirect to the page 
       if(localStorage.getItem('userAuth')) {
         return <Redirect to="home"/>
       }
@@ -50,8 +45,9 @@ export default class Logging extends Component {
       if(username && password) {
         isDisabled = false
       }
+
       return (
-       <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit}>
         <label>Username  </label>
         <input 
             type="text" 
@@ -63,7 +59,7 @@ export default class Logging extends Component {
         <br>
         </br>
    
-       <label>Password  </label>
+        <label>Password  </label>
         <input 
             type="password" 
             placeholder="password" 
@@ -71,9 +67,10 @@ export default class Logging extends Component {
             value={this.state.password} 
             onChange={this.handleChange} 
             required />
+        <br>
         </br>
   
-      <button type="submit" disabled={isDisabled}>
+        <button type="submit" disabled={isDisabled}>
           Login   
         </button>
   
@@ -83,3 +80,6 @@ export default class Logging extends Component {
     }
   }
   
+
+
+
