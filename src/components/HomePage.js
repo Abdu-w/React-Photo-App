@@ -31,6 +31,10 @@ export default class HomePage extends Component{
     
   
     render(){
+          //when page rerenders after signout and userAuth is not in the localstorage obj it will redirect to login
+      if(!localStorage.getItem('userAuth')) {
+        return <Redirect to="/" />
+      }
       return(
        <div className='homePage'> 
           
