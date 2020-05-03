@@ -12,9 +12,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
 
-        {/* <Navbar />
-        <Logging />
-        <HomePage /> */}
+
         <Switch>  
           <HomePage />
           <Route path="home" component={HomePage}/>
