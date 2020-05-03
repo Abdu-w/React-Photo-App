@@ -40,6 +40,9 @@ export default class HomePage extends Component{
           <h2>User logged in : {this.state.logedIn ? 'True' : 'False'}</h2>
           <button onClick={this.signOut}>sign out</button>
           <br />
+          <br />
+          <br />
+          <br />
           
           <input 
             ref="file" 
