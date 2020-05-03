@@ -38,6 +38,11 @@ export default class Logging extends Component {
 
     
     render() {
+        // the localstoarge is populated  then redirect to the page 
+      // disable loging button until uername&pass is populated 
+      
+      // deconstruct the state 
+      // if username and password are populated == true
       return (
         <form onSubmit={this.handleSubmit}>
         <label>Username  </label>
