@@ -7,15 +7,7 @@ import './App.css';
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Switch>  
-          <HomePage />
-          <Route path="home" component={HomePage}/>
-          <Route component={Logging}/>
-        </Switch>
-      </div>
-    </BrowserRouter>
+   
   );
 }
 
