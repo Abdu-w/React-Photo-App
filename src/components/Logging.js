@@ -51,14 +51,15 @@ export default class Logging extends Component {
         isDisabled = false
       }
       return (
-        <form onSubmit={this.handleSubmit}>
+       <form onSubmit={this.handleSubmit}>
         <label>Username  </label>
         <input 
             type="text" 
-            placeholder="Username" 
-            name="userName" 
-            value={this.state.userName} 
-            onChange={this.handleChange} required />
+            placeholder="username" 
+            name="username" 
+            value={this.state.username} 
+            onChange={this.handleChange} 
+            required />
         <br>
         </br>
    
